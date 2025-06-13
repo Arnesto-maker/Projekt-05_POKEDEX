@@ -1,0 +1,46 @@
+            <div class="card" id="card01" onclick="showCardDetails()">
+                <div class="card-header">
+                    <div class="id_name">#1</div>
+                    <div class="Name">Bulbasaur</div>
+                </div>
+                <div class="card-body"><img src="assets/img/card-content/bulbasaur.png" alt="BulbasaurID01 "
+                        class="card-body-img"></div>
+                <div class="card-footer" id="cardFooter">
+                    <img src="assets/img/card-content/typ-icons/grass.svg" alt="typ01" class="card-footer-type">
+                    <img src="assets/img/card-content/typ-icons/poison.svg" alt="typ02" class="card-footer-type">
+                </div>
+            </div>
+
+
+            <div class="detailed-card">
+            <div class="detailed-card-header">
+                <div class="detailed-card-id" id="detailedCard01">
+                    
+                </div>
+                <div class="detailed-card-name">
+                    Bulbasaur
+                </div>
+                <div class="detailed-card-close-button" onclick="closeModal(index)">
+                    <img src="assets/img/icon/x-10327 (1).png" alt="detailed close button"
+                        class="detailed-card-close-button-img">
+                </div>
+            </div>
+            <div class="detailed-card-body">
+                <img src="assets/img/card-content/bulbasaur.png" alt="BulbasaurID01 " class="card-body-img">
+            </div>
+            <div class="detailed-card-footer">
+                <img src="assets/img/card-content/typ-icons/grass.svg" alt="typ01" class="card-footer-type">
+                <img src="assets/img/card-content/typ-icons/poison.svg" alt="typ02" class="card-footer-type">
+            </div>
+            <div class="detailed-card-sub-info-nav">
+                <div class="detailed-card-nav" onclick="getMainAttribute()" id="main">
+                    main
+                </div>
+                <div class="detailed-card-nav " onclick="getStatsAttribute()" id="stats">
+                    stats
+                </div>
+                <div class="detailed-card-nav" onclick="getEvolutionChain()" id="evoChain">
+                    evo-chain
+                </div>
+            </div>
+            <div class="detailed-card-sub-info" id="cardAttributes"></div>

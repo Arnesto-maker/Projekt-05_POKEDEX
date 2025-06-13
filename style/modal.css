@@ -1,0 +1,160 @@
+.modal {
+    height: 100%;
+    min-height: 182vh;
+    background-color: rgba(0, 0, 0, 0.753);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailed-card {
+    background-color: #09212a;
+    border-radius: 8px;
+    height: 500px;
+    width: 400px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.detailed-card-header {
+    height: 10%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 24px;
+    font-weight: 700;
+
+}
+
+.detailed-card-close-button {
+    margin-top: 6px;
+}
+
+.detailed-card-body {
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.detailed-card-footer {
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+}
+
+.detailed-card-sub-info-nav {
+    background-color: rgba(0, 0, 0, 0.582);
+    height: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.detailed-card-nav {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.detailed-card-nav:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    border-bottom: white;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.active{
+    transform: scale(1.1);
+    border-bottom: white;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.detailed-card-sub-info {
+    height: 30%;
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.card-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detailed-card-close-button-img {
+    height: 24px;
+    width: auto;
+    margin-top: 2px;
+}
+
+.card-Attributes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    flex: 1;
+}
+
+.rowData {
+    width: 144px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.detailed-card-close-button-img:hover {
+    cursor: pointer;
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.evo-chain-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 16px;
+    justify-content: center;
+}
+
+.evo-chain-img {
+    height: 86px;
+    width: 93px;
+    object-fit: cover;
+}
+
+.evo-chain-image-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+}
+
+.evo-chain-arrow {
+    height: 48px;
+    width: auto;
+    object-fit: cover;
+    margin-bottom: 24px;
+}

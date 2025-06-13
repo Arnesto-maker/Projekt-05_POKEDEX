@@ -1,0 +1,65 @@
+                    <div class="evo-chain-box">
+                    <div id="firstForm01" class="evo-chain-image-box">
+                        <img src="assets/img/card-content/bulbasaur.png" alt="firstForm01Bulbasaur" class="evo-chain-img">
+                        <div id="firstForm01-name">Bulbasaur</div>
+                    </div>
+                    <div class="arrow-right">
+                        <img src="assets/img/icon/arrow-right-3098.svg" alt="" class="evo-chain-arrow">
+                    </div>
+                    <div id="secondForm01" class="evo-chain-image-box">
+                        <img src="assets/img/card-content/ivysaur.png" alt="secondForm01Bulbasaur" class="evo-chain-img">
+                        <div id="secondForm01-name">Ivysaur</div>
+                    </div>
+                    <div class="arrow-right">
+                        <img src="assets/img/icon/arrow-right-3098.svg" alt="" class="evo-chain-arrow">
+                    </div>
+                    <div id="thirdForm01" class="evo-chain-image-box">
+                        <img src="assets/img/card-content/venusaur.png" alt="secondForm01Bulbasaur" class="evo-chain-img">
+                        <div id="thirdForm01-name">Venusaur</div>
+                    </div>
+                    </div> 
+
+                                
+                <div class="card-Attributes" id="stats01">
+                    <div class="row">
+                        <div class="rowData">HP</div>
+                        <div class="rowData">:</div>
+                        <div id="height01" class="rowData">100</div>
+                    </div>
+                    <div class="row">
+                        <div class="rowData">Attack</div>
+                        <div class="rowData">:</div>
+                        <div id="weight01" class="rowData">200</div>
+                    </div>
+                    <div class="row">
+                        <div class="rowData">defense</div>
+                        <div class="rowData">:</div>
+                        <div id="baseExp01" class="rowData">700</div>
+                    </div>
+                            <div class="row">
+                        <div class="rowData">special-Attack</div>
+                        <div class="rowData">:</div>
+                        <div id="baseExp01" class="rowData">700</div>
+                    </div>
+                    <div class="row">
+                        <div class="rowData">speed</div>
+                        <div class="rowData">:</div>
+                        <div id="baseExp01" class="rowData">700</div>
+                    </div> 
+
+                 <div class="card-stats" id="main01">
+                    <div class="row">
+                        <div class="rowData">Height</div>
+                        <div class="rowData">:</div>
+                        <div id="height01" class="rowData">0.6 m</div>
+                    </div>
+                    <div class="row">
+                        <div class="rowData">Weight</div>
+                        <div class="rowData">:</div>
+                        <div id="weight01" class="rowData">8.5 kg</div>
+                    </div>
+                    <div class="row">
+                        <div class="rowData">Base-experience</div>
+                        <div class="rowData">:</div>
+                        <div id="baseExp01" class="rowData">62</div>
+                    </div> 
