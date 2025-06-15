@@ -3,12 +3,12 @@ function setMainAttribute(index) {
                     <div class="row">
                         <div class="rowData">Height</div>
                         <div>:</div>
-                        <div id="height${index}" class="rowData">${pokeCards[index].main_attr.height} m</div>
+                        <div id="height${index}" class="rowData">${(pokeCards[index].main_attr.height*0.1).toFixed(1)} m</div>
                     </div>
                     <div class="row">
                         <div class="rowData">Weight</div>
                         <div >:</div>
-                        <div id="weight${index}" class="rowData">${pokeCards[index].main_attr.weight} kg</div>
+                        <div id="weight${index}" class="rowData">${(pokeCards[index].main_attr.weight*0.1.toFixed(1))} kg</div>
                     </div>
                     <div class="row">
                         <div class="rowData">Base-experience</div>
@@ -84,13 +84,15 @@ function setEvolutionChain(index){
                         <img src="assets/img/card-content/${pokeCards[index].evo_chain_attr.second}.png" alt="secondForm01Bulbasaur" class="evo-chain-img">
                         <div id="secondForm01-name">${pokeCards[index].evo_chain_attr.second}</div>
                     </div>
+                    ${pokeCards[index].evo_chain_attr.third ? `
                     <div class="arrow-right">
-                        <img src="assets/img/icon/arrow-right-3098.svg" alt="" class="evo-chain-arrow">
+                    <img src="assets/img/icon/arrow-right-3098.svg" class="evo-chain-arrow">
                     </div>
-                    <div id="thirdForm${index}" class="evo-chain-image-box">
-                        <img src="assets/img/card-content/${pokeCards[index].evo_chain_attr.third}.png" alt="secondForm01Bulbasaur" class="evo-chain-img">
-                        <div id="thirdForm01-name">${pokeCards[index].evo_chain_attr.third}</div>
-                    </div>
+                    <div class="evo-chain-image-box">
+                    <img src="assets/img/card-content/${pokeCards[index].evo_chain_attr.third}.png" class="evo-chain-img">
+                    <div>${pokeCards[index].evo_chain_attr.third}</div>
+                </div>
+            `:''}
                     </div> `;
 }
 

@@ -1,6 +1,5 @@
 function init() {
     renderAllCards();
-    // fetchDataFromAPI('https://pokeapi.co/api/v2/pokemon/bulbasaur' ,'https://pokeapi.co/api/v2/evolution-chain/1')
 }
 
 function showCardDetails(index) {

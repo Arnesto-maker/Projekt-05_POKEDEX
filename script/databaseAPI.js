@@ -16,6 +16,9 @@ attributeURL = [
     'https://pokeapi.co/api/v2/pokemon/15',
     'https://pokeapi.co/api/v2/pokemon/16',
     'https://pokeapi.co/api/v2/pokemon/17',
+    'https://pokeapi.co/api/v2/pokemon/18',
+    'https://pokeapi.co/api/v2/pokemon/19',
+    'https://pokeapi.co/api/v2/pokemon/20',
 ]
 
 evolutionURL = [
@@ -36,6 +39,9 @@ evolutionURL = [
     'https://pokeapi.co/api/v2/evolution-chain/5',
     'https://pokeapi.co/api/v2/evolution-chain/6',
     'https://pokeapi.co/api/v2/evolution-chain/6',
+    'https://pokeapi.co/api/v2/evolution-chain/6',
+    'https://pokeapi.co/api/v2/evolution-chain/7',
+    'https://pokeapi.co/api/v2/evolution-chain/7',
     
 ]
 
@@ -73,7 +79,7 @@ async function fetchDataFromAPI(attributeURL, evolutionURL) {
         evo_chain_attr: evo_chain_attr(
             responseEvolutionChainAsJson.chain.species.name,
             responseEvolutionChainAsJson.chain.evolves_to[0].species.name,
-            responseEvolutionChainAsJson.chain.evolves_to[0].evolves_to[0] ?.species ?.name ?? 'none'
+            responseEvolutionChainAsJson.chain.evolves_to[0].evolves_to[0] ?.species ?.name ?? null
         )
     }
     return card
