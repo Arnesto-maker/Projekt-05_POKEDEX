@@ -1,0 +1,21 @@
+    
+    
+    
+    //const name = responseAtrributeAsJson.forms[0].name;
+    // const typ01 = responseAtrributeAsJson.types[0].type.name;
+    // const typ02 = responseAtrributeAsJson.types[1] ?.type ?.name ?? 'none';
+    
+    
+    // const height = responseAtrributeAsJson.height;
+    // const weight = responseAtrributeAsJson.weight;
+    // const baseExp = responseAtrributeAsJson.base_experience;
+
+    // const hp = responseAtrributeAsJson.stats[0].base_stat;
+    // const attack = responseAtrributeAsJson.stats[1].base_stat;
+    // const defence = responseAtrributeAsJson.stats[2].base_stat;
+    // const specialAttack = responseAtrributeAsJson.stats[3].base_stat;
+    // const speed = responseAtrributeAsJson.stats[5].base_stat;
+
+    // const first = responseEvolutionChainAsJson.chain.species.name;
+    // const second = responseEvolutionChainAsJson.chain.evolves_to[0].species.name;
+    // const third = responseEvolutionChainAsJson.chain.evolves_to[0].evolves_to[0].species.name;

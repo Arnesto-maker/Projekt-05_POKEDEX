@@ -1,0 +1,2 @@
+Attribute : https://pokeapi.co/api/v2/pokemon/bulbasaur     ------- bulbasaur = name
+evolution : https://pokeapi.co/api/v2/evolution-chain/1        ---------bulbasaur id ist 1 also alles kann geändert werden

@@ -61,7 +61,7 @@ footer {
     border-color: rgba(255, 255, 255, 0.668);
     border-style: solid;
     border-width: 2px;
-    transform: scale(0.8);
+    transform: scale(1.1);
 }
 
 button {
@@ -82,4 +82,50 @@ button:hover {
 }
 .water{
     background-color: rgba(0, 255, 255, 0.79);
+}
+
+.normal {
+    background-color: #A8A77A;
+}
+.electric {
+    background-color: #F7D02C;
+}
+.ice {
+    background-color: #96D9D6;
+}
+.fighting {
+    background-color: #C22E28;
+}
+.poison {
+    background-color: #A33EA1;
+}
+.ground {
+    background-color: #E2BF65;
+}
+.flying {
+    background-color: #A98FF3;
+}
+.psychic {
+    background-color: #F95587;
+}
+.bug {
+    background-color: #A6B91A;
+}
+.rock {
+    background-color: #B6A136;
+}
+.ghost {
+    background-color: #735797;
+}
+.dragon {
+    background-color: #6F35FC;
+}
+.dark {
+    background-color: #705746;
+}
+.steel {
+    background-color: #B7B7CE;
+}
+.fairy {
+    background-color: #D685AD;
 }

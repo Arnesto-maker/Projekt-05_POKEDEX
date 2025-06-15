@@ -94,18 +94,18 @@ function setEvolutionChain(index){
                     </div> `;
 }
 
-function createCards(index) {
+function createCards(card,index) {
     return `    <div class="card" id="card${index}" onclick="showCardDetails(${index})">
                 <div class="card-header">
                     <div class="id_name">#${Number(index + 1)}</div>
-                    <div class="Name">${pokeCards[index].name}</div>
+                    <div class="Name">${(card.name).toUpperCase()}</div>
                 </div>
-                <div class="card-body ${pokeCards[index].typ.typ01}"><img src="assets/img/card-content/${pokeCards[index].name}.png" 
-                alt="${pokeCards[index].name}ID${Number(index + 1)} "
+                <div class="card-body ${card.typ.typ01}"><img src="assets/img/card-content/${card.name}.png" 
+                alt="${card.name}ID${Number(index + 1)} "
                 class="card-body-img }"></div>
                 <div class="card-footer" id="cardFooter">
-                    <img src="assets/img/card-content/typ-icons/${pokeCards[index].typ.typ01}.svg" alt="typ01" class="card-footer-type">
-                    <img src="assets/img/card-content/typ-icons/${pokeCards[index].typ.typ02}.svg" alt="typ02" class="card-footer-type">
+                    <img src="assets/img/card-content/typ-icons/${card.typ.typ01}.svg" alt="typ01" class="card-footer-type">
+                    <img src="assets/img/card-content/typ-icons/${card.typ.typ02}.svg" alt="typ02" class="card-footer-type">
                 </div>
                 </div>`;
 }

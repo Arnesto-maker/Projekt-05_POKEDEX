@@ -10,13 +10,17 @@
     max-width: 1920px;
     flex-direction: row;
     gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .card {
     background-color: #09212a;
     border-radius: 8px;
-    height: 320px;
-    width: 250px;
+    height: calc(0.8*320px);
+    width: calc(0.8*250px);
     margin-top: 16px;
     display: flex;
     flex-direction: column;
@@ -24,7 +28,10 @@
 
 .card:hover {
     cursor: pointer;
-    transform: scale(0.8);
+    border-color: rgba(255, 255, 255, 0.668);
+    border-style: solid;
+    border-width: 2px;
+    transform: scale(1.1);
     transition: transform 0.5s ease-in-out;
 }
 
@@ -32,7 +39,7 @@
     height: 20%;
     display: flex;
     gap: 16px;
-    font-size: 26px;
+    font-size: calc(0.8*24px);
     justify-content: left;
     align-items: center;
     margin-left: 8px;
@@ -68,15 +75,15 @@
 }
 
 .health-bar-rahmen {
-        width: 216px;
-        height: 8px;
-        border: 1px solid black;
-        background-color: #e0e0e0;
-        border-radius: 8px;
+    width: 216px;
+    height: 8px;
+    border: 1px solid black;
+    background-color: #e0e0e0;
+    border-radius: 8px;
 }
 
 .health-bar-fuellung {
-        height: 100%;
-        transition: width 0.5s;
-        border-radius: 8px;
-    }
+    height: 100%;
+    transition: width 0.5s;
+    border-radius: 8px;
+}

@@ -1,5 +1,6 @@
 function init() {
-    renderCards()
+    renderAllCards();
+    // fetchDataFromAPI('https://pokeapi.co/api/v2/pokemon/bulbasaur' ,'https://pokeapi.co/api/v2/evolution-chain/1')
 }
 
 function showCardDetails(index) {
@@ -37,9 +38,3 @@ function getEvolutionChain(index) {
     document.getElementById('cardAttributes').innerHTML = setEvolutionChain(index);
 }
 
-function renderCards() {
-    document.getElementById('mainContent').innerHTML = " ";
-    for (let index = 0; index < pokeCards.length; index++) {
-        document.getElementById('mainContent').innerHTML += createCards(index);
-    }
-}
