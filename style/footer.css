@@ -1,4 +1,4 @@
-.footer-content{
+.footer-content {
     height: 16vh;
     color: white;
     display: flex;
@@ -8,7 +8,13 @@
     max-width: 1920px;
     align-items: center;
 }
+
+.footer-text {
+    font-size: 24px;
+    font-weight: 700;
+}
+@media(max-width:420px){
     .footer-text{
-        font-size: 24px;
-        font-weight: 700;
+     font-size: 20px;
     }
+}

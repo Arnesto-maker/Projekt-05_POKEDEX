@@ -1,8 +1,21 @@
+html{
+    min-height: 100%;
+    scrollbar-color: #031117 #0d324000 ;
+}
 body {
     font-family: 'Figtree-Regular';
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: hidden;
 }
-
+@media(max-width:420px){
+    body{
+        min-width: 320px;
+        overflow-x: hidden;
+    }
+}
 h1 {
     font-size: 56px;
     margin-block-start: 0;
@@ -63,6 +76,12 @@ footer {
     border-width: 2px;
     transform: scale(1.1);
 }
+.width25PX{
+    display: flex;
+    min-width: 25px;
+    padding: 0;
+}
+
 
 button {
     width: fit-content;

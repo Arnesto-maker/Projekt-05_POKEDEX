@@ -1,6 +1,6 @@
 .modal {
-    height: 100%;
-    min-height: 182vh;
+    height: 103vh;
+    min-height: 70vh;
     background-color: rgba(0, 0, 0, 0.753);
     position: absolute;
     top: 0;
@@ -77,7 +77,7 @@
     border-bottom-style: solid;
 }
 
-.active{
+.active {
     transform: scale(1.1);
     border-bottom: white;
     border-bottom-width: 2px;
@@ -121,7 +121,14 @@
     width: 144px;
     font-size: 16px;
     font-weight: 700;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+    gap: 16px;
 }
+
 
 .detailed-card-close-button-img:hover {
     cursor: pointer;

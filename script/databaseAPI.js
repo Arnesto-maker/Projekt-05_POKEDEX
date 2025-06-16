@@ -1,51 +1,3 @@
-attributeURL = [
-    'https://pokeapi.co/api/v2/pokemon/1',
-    'https://pokeapi.co/api/v2/pokemon/2',
-    'https://pokeapi.co/api/v2/pokemon/3',
-    'https://pokeapi.co/api/v2/pokemon/4',
-    'https://pokeapi.co/api/v2/pokemon/5',
-    'https://pokeapi.co/api/v2/pokemon/6',
-    'https://pokeapi.co/api/v2/pokemon/7',
-    'https://pokeapi.co/api/v2/pokemon/8',
-    'https://pokeapi.co/api/v2/pokemon/9',
-    'https://pokeapi.co/api/v2/pokemon/10',
-    'https://pokeapi.co/api/v2/pokemon/11',
-    'https://pokeapi.co/api/v2/pokemon/12',
-    'https://pokeapi.co/api/v2/pokemon/13',
-    'https://pokeapi.co/api/v2/pokemon/14',
-    'https://pokeapi.co/api/v2/pokemon/15',
-    'https://pokeapi.co/api/v2/pokemon/16',
-    'https://pokeapi.co/api/v2/pokemon/17',
-    'https://pokeapi.co/api/v2/pokemon/18',
-    'https://pokeapi.co/api/v2/pokemon/19',
-    'https://pokeapi.co/api/v2/pokemon/20',
-]
-
-evolutionURL = [
-    'https://pokeapi.co/api/v2/evolution-chain/1',
-    'https://pokeapi.co/api/v2/evolution-chain/1',
-    'https://pokeapi.co/api/v2/evolution-chain/1',
-    'https://pokeapi.co/api/v2/evolution-chain/2',
-    'https://pokeapi.co/api/v2/evolution-chain/2',
-    'https://pokeapi.co/api/v2/evolution-chain/2',
-    'https://pokeapi.co/api/v2/evolution-chain/3',
-    'https://pokeapi.co/api/v2/evolution-chain/3',
-    'https://pokeapi.co/api/v2/evolution-chain/3',
-    'https://pokeapi.co/api/v2/evolution-chain/4',
-    'https://pokeapi.co/api/v2/evolution-chain/4',
-    'https://pokeapi.co/api/v2/evolution-chain/4',
-    'https://pokeapi.co/api/v2/evolution-chain/5',
-    'https://pokeapi.co/api/v2/evolution-chain/5',
-    'https://pokeapi.co/api/v2/evolution-chain/5',
-    'https://pokeapi.co/api/v2/evolution-chain/6',
-    'https://pokeapi.co/api/v2/evolution-chain/6',
-    'https://pokeapi.co/api/v2/evolution-chain/6',
-    'https://pokeapi.co/api/v2/evolution-chain/7',
-    'https://pokeapi.co/api/v2/evolution-chain/7',
-    
-]
-
-
 function renderCards(card) {
     document.getElementById('mainContent').innerHTML = " ";
     for (let index = 0; index < card.length; index++) {
@@ -53,12 +5,13 @@ function renderCards(card) {
     }
 }
 
-async function fetchDataFromAPI(attributeURL, evolutionURL) {
+async function fetchDataFromAPI(attributeURL, evolutionURL) { 
     let responseAtrribute = await fetch(attributeURL);
     let responseEvolutionChain = await fetch(evolutionURL);
     let responseAtrributeAsJson = await responseAtrribute.json();
     let responseEvolutionChainAsJson = await responseEvolutionChain.json();
     const card = {
+        id   : responseAtrributeAsJson.id,
         name : responseAtrributeAsJson.forms[0].name,
         typ:    typeOfPokemon(
             responseAtrributeAsJson.types[0].type.name,
@@ -83,17 +36,33 @@ async function fetchDataFromAPI(attributeURL, evolutionURL) {
         )
     }
     return card
-    
 }
+
 async function renderAllCards() {
+        const loader = document.getElementById('loader-container');
+        loader.classList.remove('loader-hidden');
         let promises = [];
         for (let index = 0; index < attributeURL.length; index++) {
             promises.push(fetchDataFromAPI(attributeURL[index], evolutionURL[index]));
         }
         pokeCards =  await Promise.all(promises);
-        renderCards(pokeCards)
+        let searchKey = document.getElementById('searchInput').value.toLowerCase();
+        renderSubFunktion(searchKey,pokeCards);    
 }
 
+function renderSubFunktion(searchKey,pokeCards) {
+        const loader = document.getElementById('loader-container');
+        loader.classList.remove('loader-hidden');
+        if (searchKey.length>=1) {
+            let filteredCards = pokeCards.filter(card => { return card.name.toLowerCase().includes(searchKey)});
+            renderCards(filteredCards);
+            loader.classList.add('loader-hidden');
+        } else {
+            renderCards(pokeCards);
+            loader.classList.add('loader-hidden');
+        }
+        return
+}
 
 function typeOfPokemon(a,b) {
     const typeOfPokemon ={

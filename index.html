@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/loader.css">
 </head>
 
 <body onload="init()">
@@ -21,11 +22,14 @@
                 <img src="assets/img/icon/pokemin-icon-transparent.png" alt="" class="logo-image">
                 <h3>POKEDEX</h3>
             </div>
-            <div class="search-input">
-                <input type="text">
+            <div class="search-input" >
+                <input type="text" id="searchInput" placeholder="find your pokemon" onkeyup="init()"> 
             </div>
         </div>
     </header>
+    <div id="loader-container" class="loader-hidden">
+        <div class="spinner"></div>
+    </div>
     <main>
         <div class="main-content" id="mainContent"></div>
     </main>
@@ -37,8 +41,9 @@
         </div>
     </footer>
 </body>
-<!-- <script src="script/database.js"></script> -->
+<script src="script/database.js"></script> 
 <script src="script/script.js"></script>
 <script src="script/tempate.js"></script>
 <script src="script/databaseAPI.js"></script>
+scr
 </html>

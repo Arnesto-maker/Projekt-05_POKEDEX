@@ -23,3 +23,9 @@
     flex: 1;
     gap: 16px;
 }
+
+@media(max-width:420px){
+    #searchInput{
+        width: 112px;
+    }
+}

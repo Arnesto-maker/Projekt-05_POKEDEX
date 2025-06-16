@@ -8,7 +8,7 @@ function setMainAttribute(index) {
                     <div class="row">
                         <div class="rowData">Weight</div>
                         <div >:</div>
-                        <div id="weight${index}" class="rowData">${(pokeCards[index].main_attr.weight*0.1.toFixed(1))} kg</div>
+                        <div id="weight${index}" class="rowData">${(pokeCards[index].main_attr.weight*0.1).toFixed(1)} kg</div>
                     </div>
                     <div class="row">
                         <div class="rowData">Base-experience</div>
@@ -23,50 +23,60 @@ function setStatsAttribute(index) {
                         <div class="rowData">HP</div>
                         <div>:</div>
                         <div id="height${index}" class="rowData">
-                            <div class="health-bar-rahmen" 
-                            style="width: calc( ( ${pokeCards[index].stats_attr.attack}/ ${pokeCards[index].stats_attr.max_attack}) *400px  );">
-                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"></div>
+                            <div class="width25PX">${pokeCards[index].stats_attr.hp}</div>
+                            <div class="health-bar-rahmen">
+                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"   
+                                    style="width:${(pokeCards[index].stats_attr.hp/290)*100}px "  ></div>
                             </div>
+                            <div>300</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="rowData">Attack</div>
                         <div>:</div>
                         <div id="weight${index}" class="rowData">
-                           <div class="health-bar-rahmen" 
-                           style="width: calc( ( ${pokeCards[index].stats_attr.attack}/ ${pokeCards[index].stats_attr.max_attack}) *400px );">
-                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"></div>
+                           <div class="width25PX">${pokeCards[index].stats_attr.attack}</div>
+                            <div class="health-bar-rahmen">
+                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"   
+                                    style="width:${(pokeCards[index].stats_attr.attack/290)*100}px "  ></div>
                             </div>
+                            <div>300</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="rowData">defense</div>
                         <div >:</div>
                         <div id="defence${index}" class="rowData">
-                           <div class="health-bar-rahmen" 
-                           style="width: calc( ( ${pokeCards[index].stats_attr.defence}/ ${pokeCards[index].stats_attr.max_defence}) *400px);">
-                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"></div>
+                           <div class="width25PX">${pokeCards[index].stats_attr.defence}</div>
+                            <div class="health-bar-rahmen">
+                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"   
+                                    style="width:${(pokeCards[index].stats_attr.defence/290)*100}px "  ></div>
                             </div>
+                            <div>300</div>
                         </div>
                     </div>
                         <div class="row">
                         <div class="rowData">special-Attack</div>
                         <div>:</div>
                         <div id="specialAttack${index}" class="rowData">
-                           <div class="health-bar-rahmen" 
-                           style="width: calc( ( ${pokeCards[index].stats_attr.specialAttack}/ ${pokeCards[index].stats_attr.max_sp_attack}) *400px);">
-                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"></div>
+                           <div class="width25PX">${pokeCards[index].stats_attr.specialAttack}</div>
+                            <div class="health-bar-rahmen">
+                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"   
+                                    style="width:${(pokeCards[index].stats_attr.specialAttack/290)*100}px "  ></div>
                             </div>
+                            <div>300</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="rowData">speed</div>
                         <div>:</div>
                         <div id="speed${index}" class="rowData">
-                            <div class="health-bar-rahmen" 
-                            style="width: calc( ( ${pokeCards[index].stats_attr.speed}/ ${pokeCards[index].stats_attr.max_speed}) *400px);">
-                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"></div>
+                            <div class="width25PX">${pokeCards[index].stats_attr.speed}</div>
+                            <div class="health-bar-rahmen">
+                                    <div class="health-bar-fuellung  ${pokeCards[index].typ.typ01}"   
+                                    style="width:${(pokeCards[index].stats_attr.speed/290)*100}px "  ></div>
                             </div>
+                            <div>300</div>
                         </div>
                     </div> `;
 }
@@ -97,9 +107,9 @@ function setEvolutionChain(index){
 }
 
 function createCards(card,index) {
-    return `    <div class="card" id="card${index}" onclick="showCardDetails(${index})">
+    return `    <div class="card" id="card${card.id-1}" onclick="showCardDetails(${card.id-1})">
                 <div class="card-header">
-                    <div class="id_name">#${Number(index + 1)}</div>
+                    <div class="id_name">#${card.id}</div>
                     <div class="Name">${(card.name).toUpperCase()}</div>
                 </div>
                 <div class="card-body ${card.typ.typ01}"><img src="assets/img/card-content/${card.name}.png" 

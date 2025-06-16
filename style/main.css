@@ -1,18 +1,21 @@
 .main-content {
-    height: 100%;
-    min-height: 150vh;
+    max-height: 68vh;
+    min-height: 67.3vh;
     color: white;
     display: flex;
     flex-direction: row;
     flex: 1;
     margin-left: 16px;
     margin-right: 16px;
+    margin-bottom: 16px;
     max-width: 1920px;
     flex-direction: row;
     gap: 16px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 
