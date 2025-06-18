@@ -87,13 +87,15 @@ function setEvolutionChain(index){
                         <img src="assets/img/card-content/${pokeCards[index].evo_chain_attr.first}.png" alt="firstForm01Bulbasaur" class="evo-chain-img">
                         <div id="firstForm01-name">${pokeCards[index].evo_chain_attr.first}</div>
                     </div>
+                    ${pokeCards[index].evo_chain_attr.second ? `
                     <div class="arrow-right">
-                        <img src="assets/img/icon/arrow-right-3098.svg" alt="" class="evo-chain-arrow">
+                    <img src="assets/img/icon/arrow-right-3098.svg" class="evo-chain-arrow">
                     </div>
-                    <div id="secondForm${index}" class="evo-chain-image-box">
-                        <img src="assets/img/card-content/${pokeCards[index].evo_chain_attr.second}.png" alt="secondForm01Bulbasaur" class="evo-chain-img">
-                        <div id="secondForm01-name">${pokeCards[index].evo_chain_attr.second}</div>
-                    </div>
+                    <div class="evo-chain-image-box">
+                    <img src="assets/img/card-content/${pokeCards[index].evo_chain_attr.second}.png" class="evo-chain-img">
+                    <div>${pokeCards[index].evo_chain_attr.second}</div>
+                </div>
+            `:''}
                     ${pokeCards[index].evo_chain_attr.third ? `
                     <div class="arrow-right">
                     <img src="assets/img/icon/arrow-right-3098.svg" class="evo-chain-arrow">
@@ -123,7 +125,7 @@ function createCards(card,index) {
 }
 
 function createDetailCards(index) {
-    return  `<div class="detailed-card">
+    return  `<div class="detailed-card" id="detailedCard">
             <div class="detailed-card-header">
                 <div class="detailed-card-id" id="detailedCard${index}">
                     #${Number(index+1)}

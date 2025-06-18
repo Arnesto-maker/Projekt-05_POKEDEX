@@ -7,14 +7,63 @@
     margin-right: 16px;
     max-width: 1920px;
     align-items: center;
+    flex: 1;
+    justify-content: space-between;
 }
 
 .footer-text {
     font-size: 24px;
     font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
 }
-@media(max-width:420px){
-    .footer-text{
-     font-size: 20px;
+
+.addMorePokemonButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+}
+
+.footerButton:hover {
+    cursor: pointer;
+}
+
+.activeAddButton {
+    transform: scale(0.8);
+    transition: transform 0.1s ease-in-out;
+}
+.logo-image-footer {
+    height: 40px;
+    object-fit: cover;
+}
+
+
+@media (max-width:786px ){
+    .footer-text {
+       font-size: 16px; 
+    }
+}
+@media(max-width:660px) {
+    .footer-text {
+        font-size: 20px;
+    }
+     .button-footer-text{
+        display: none;
+    }
+}
+@media(max-width:420px) {
+    .footer-text {
+        font-size: 20px;
+    }
+}
+@media(max-width:440px){
+    .logo-image-footer{
+        display: none;
     }
 }

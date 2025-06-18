@@ -1,5 +1,5 @@
 .modal {
-    height: 103vh;
+    height: 100vh;
     min-height: 70vh;
     background-color: rgba(0, 0, 0, 0.753);
     position: absolute;
@@ -20,6 +20,7 @@
     flex-direction: column;
     color: white;
 }
+
 
 .detailed-card-header {
     height: 10%;
@@ -109,6 +110,8 @@
     gap: 8px;
 }
 
+
+
 .row {
     display: flex;
     flex-direction: row;
@@ -126,8 +129,9 @@
     align-items: center;
     flex-direction: row;
     flex: 1;
-    gap: 16px;
+
 }
+
 
 
 .detailed-card-close-button-img:hover {
@@ -164,4 +168,33 @@
     width: auto;
     object-fit: cover;
     margin-bottom: 24px;
+}
+@media(max-width:660px){
+      .detailed-card{
+        height: 400px;
+        width:280px;
+    }
+       .card-Attributes{
+        height: 70%;
+        overflow-y: scroll;
+        scrollbar-color: #031117 #0d324000 ;
+    }
+    .evo-chain-img{
+        height: 52px;
+        width: 52px;
+    }
+    .evo-chain-arrow {
+        height: 13px;
+    }
+}
+@media(max-width:320px){
+    .detailed-card{
+        height: 400px;
+        width:280px;
+    }
+}
+@media(max-width:320px){
+    .rowData{
+        font-size:14px;
+    }
 }

@@ -1,6 +1,5 @@
 html{
-    min-height: 100%;
-    scrollbar-color: #031117 #0d324000 ;
+    overflow-y: hidden;
 }
 body {
     font-family: 'Figtree-Regular';
@@ -8,12 +7,11 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    overflow-y: hidden;
+    height: 100vh;
 }
-@media(max-width:420px){
-    body{
+@media(max-width:320px){
+    body,.modal{
         min-width: 320px;
-        overflow-x: hidden;
     }
 }
 h1 {

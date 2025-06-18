@@ -5,10 +5,44 @@ function renderCards(card) {
     }
 }
 
+async function createURLArray(number) {
+    let promises = [];
+    for (let index = 0; index < number; index++) {
+        promises.push(fetchAttributeURl(index));
+    }
+    attributeURL = await Promise.all(promises)
+    return attributeURL;
+}
+
+async function fetchAttributeURl(index) {
+    const responseAllPokemon = await fetch ('https://pokeapi.co/api/v2/pokemon?limit=2000&offset=0');
+    const responseAllPokemonAsJson = await responseAllPokemon.json();
+    return responseAllPokemonAsJson.results[index].url ;
+    
+}
+
+async function createEvolutionUrlArray() {
+    let promises = [];
+    for (let index = 0; index < attributeURL.length; index++) {
+        promises.push( fetchEvolutionUrl(attributeURL[index]))
+    }
+    evolutionURL = await Promise.all(promises);
+    return(evolutionURL);
+}
+
+async function fetchEvolutionUrl(attributeURL) {
+    const responseAttribute = await fetch(attributeURL)
+    const responseAttributeAsJson = await responseAttribute.json();
+    let id = responseAttributeAsJson.id;
+    const responsePokemonSpecies = await fetch('https://pokeapi.co/api/v2/pokemon-species/' + id)
+    const responsePokemonSpeciesAsJson = await responsePokemonSpecies.json()
+    return responsePokemonSpeciesAsJson.evolution_chain.url ;
+}
+
 async function fetchDataFromAPI(attributeURL, evolutionURL) { 
     let responseAtrribute = await fetch(attributeURL);
-    let responseEvolutionChain = await fetch(evolutionURL);
     let responseAtrributeAsJson = await responseAtrribute.json();
+    let responseEvolutionChain = await fetch(evolutionURL);
     let responseEvolutionChainAsJson = await responseEvolutionChain.json();
     const card = {
         id   : responseAtrributeAsJson.id,
@@ -30,38 +64,38 @@ async function fetchDataFromAPI(attributeURL, evolutionURL) {
             responseAtrributeAsJson.stats[5].base_stat
         ),
         evo_chain_attr: evo_chain_attr(
-            responseEvolutionChainAsJson.chain.species.name,
-            responseEvolutionChainAsJson.chain.evolves_to[0].species.name,
-            responseEvolutionChainAsJson.chain.evolves_to[0].evolves_to[0] ?.species ?.name ?? null
+            responseEvolutionChainAsJson.chain ?.species ?.name ?? null,
+            responseEvolutionChainAsJson.chain ?.evolves_to[0] ?.species ?.name ?? null,
+            responseEvolutionChainAsJson.chain ?.evolves_to[0] ?.evolves_to[0] ?.species ?.name ?? null
         )
     }
     return card
 }
 
-async function renderAllCards() {
+async function renderAllCards(number) {
         const loader = document.getElementById('loader-container');
         loader.classList.remove('loader-hidden');
-        let promises = [];
+        let promises = []
+        attributeURL = await createURLArray(number)
+        evolutionURL = await createEvolutionUrlArray()
         for (let index = 0; index < attributeURL.length; index++) {
             promises.push(fetchDataFromAPI(attributeURL[index], evolutionURL[index]));
         }
         pokeCards =  await Promise.all(promises);
-        let searchKey = document.getElementById('searchInput').value.toLowerCase();
-        renderSubFunktion(searchKey,pokeCards);    
+        loader.classList.add('loader-hidden');
+        renderCards(pokeCards);
+        return    
 }
 
-function renderSubFunktion(searchKey,pokeCards) {
-        const loader = document.getElementById('loader-container');
-        loader.classList.remove('loader-hidden');
-        if (searchKey.length>=1) {
+function searchFunction() {
+    let searchKey = document.getElementById('searchInput').value.toLowerCase();
+    if (searchKey.length>=3) {
             let filteredCards = pokeCards.filter(card => { return card.name.toLowerCase().includes(searchKey)});
             renderCards(filteredCards);
-            loader.classList.add('loader-hidden');
-        } else {
+    }else {
             renderCards(pokeCards);
-            loader.classList.add('loader-hidden');
         }
-        return
+    return 
 }
 
 function typeOfPokemon(a,b) {
@@ -91,6 +125,7 @@ function stats_attr(a, b, c, d, e) {
     }
     return  statsAttribute
 }
+
 function evo_chain_attr(a,b,c) {
     const evolutionChain ={
         first:a,
