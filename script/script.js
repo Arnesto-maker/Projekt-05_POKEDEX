@@ -4,6 +4,7 @@ function init() {
 
 let called = 2;
 async function addMorePokemons() {
+    await setTimer(1000);
     if (called <= 5) {
         await renderAllCards(called * 40)
         called++
@@ -11,6 +12,12 @@ async function addMorePokemons() {
         alert('maximum Pokemon reached')
         called == 2;
     }
+}
+
+async function setTimer(time) {
+    return new Promise((resolve) => {
+        setTimeout(resolve,time);
+    })
 }
 
 function showCardDetails(index) {
